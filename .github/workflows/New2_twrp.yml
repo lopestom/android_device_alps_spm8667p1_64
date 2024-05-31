@@ -13,9 +13,9 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp -b twrp-12.1
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp -b twrp-11
   DEVICE: spm8667p1_64
-  DT_LINK: https://github.com/lopestom/twrp_device_alps_spm8667p1_64
+  DT_LINK: https://github.com/lopestom/android_device_alps_spm8667p1_64
   DT_PATH: device/alps/spm8667p1_64
   TARGET: recoveryimage
   TZ: Asia/manila
