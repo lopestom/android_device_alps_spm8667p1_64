@@ -93,6 +93,6 @@ jobs:
        GITHUB_TOKEN: ${{ secrets.TEST }}
       with:
        tag_name: Junsun_V1Pro_8667-A10
-       name: TWRP37x_10-NoCrypt
+       name: TWRP37x_11-NoCrypt
        files: | 
          twrp/out/target/product/spm8667p1_64/*recovery*.img
