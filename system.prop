@@ -7,15 +7,21 @@ ro.vendor.mtk_f2fs_enable=0
 ro.vendor.mtk_emmc_support=1
 # TEE & Gatekeeper & Keymaster
 #ro.tee_support=1
-#ro.mtk_trustkernel_tee_support=1
+#ro.mtk_trustonic_tee_support=1
 #ro.mtk_tee_check_support=1
-#ro.hardware.kmsetkey=trustkernel
-#ro.hardware.gatekeeper=trustkernel
+#ro.hardware.kmsetkey=trustonic
+#ro.hardware.gatekeeper=trustonic
 ro.crypto.volume.filenames_mode=aes-256-cts
 # Default properties
 persist.adb.nonblocking_ffs=0
 #ro.build.fingerprint=alps/full_evb3561sv_w_65_m0/evb3561sv_w_65_m0:6.0/MRA58K/1564481527:userdebug/test-keys
 ro.vendor.mtk_ipo_support=1
+# from device/mediatek/system/common/system.prop
+# cxj add
+ro.hardware2=FF_866X
+ro.product.model2=FF_866X
+ro.product.name2=FF_866X
+# end of device/mediatek/system/common/system.prop
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
