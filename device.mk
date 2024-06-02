@@ -45,3 +45,7 @@ PRODUCT_PACKAGES += \
 
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.product;ro.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+# enable stock zip packages flash
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=alps/full_evb3561sv_w_65_m0/evb3561sv_w_65_m0:6.0/MRA58K/1564481527:userdebug/test-keys
