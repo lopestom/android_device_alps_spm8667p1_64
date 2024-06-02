@@ -27,11 +27,11 @@ $(call inherit-product, device/alps/spm8667p1_64/device.mk)
 
 # Inherit some common twrp stuff.
 #$(call inherit-product, vendor/omni/config/common_tablet.mk)
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := spm8667p1_64
-PRODUCT_NAME := twrp_spm8667p1_64
+PRODUCT_NAME := omni_spm8667p1_64
 PRODUCT_BRAND := alps
 PRODUCT_MODEL := spm8667p1_64
 PRODUCT_MANUFACTURER := alps
