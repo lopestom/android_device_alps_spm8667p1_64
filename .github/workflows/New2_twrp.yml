@@ -85,14 +85,14 @@ jobs:
        PATH=~/bin:$PATH
        cd twrp
        export ALLOW_MISSING_DEPENDENCIES=true && source build/envsetup.sh && lunch twrp_spm8667p1_64-userdebug && mka $TARGET -j$(nproc --all)
-       cp  out/target/product/spm8667p1_64/recovery.img    out/target/product/spm8667p1_64/recovery-spm8667p1_64-A10-$(date +"%Y%m%d").img
+       cp  out/target/product/spm8667p1_64/recovery.img    out/target/product/spm8667p1_64/recovery-spm8667p1_64-A11-$(date +"%Y%m%d").img
              
     - name: Release recovery image
       uses: softprops/action-gh-release@v2
       env:
        GITHUB_TOKEN: ${{ secrets.TEST }}
       with:
-       tag_name: Junsun_V1Pro_8667-A10
+       tag_name: Junsun_V1Pro_8667-A11
        name: TWRP37x_11-NoCrypt
        files: | 
          twrp/out/target/product/spm8667p1_64/*recovery*.img
