@@ -1,7 +1,3 @@
-on early-init
-    # cxj add for usb switch
-    write /sys/module/musb_hdrc/parameters/kernel_init_done 1
-
 on init
     setprop sys.usb.configfs 1
     setprop sys.usb.ffs.aio_compat 1
