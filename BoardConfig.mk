@@ -91,7 +91,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_HASH_TYPE := sha1
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x07c08000
-BOARD_KERNEL_SECOND_OFFSET := 0x00e88000
+#BOARD_KERNEL_SECOND_OFFSET := 0x00e88000
 BOARD_KERNEL_TAGS_OFFSET := 0x0bc08000
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_DTB_OFFSET := 0x0bc08000
@@ -109,7 +109,8 @@ BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
+#BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --second_offset "0x00e88000"
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
@@ -149,7 +150,7 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 #BOARD_CHARGER_ENABLE_SUSPEND := true
 #TARGET_DISABLE_TRIPLE_BUFFERING := false
 #BOARD_CHARGER_DISABLE_INIT_BLANK := true
-#TW_USE_LEGACY_BATTERY_SERVICES := true
+TW_USE_LEGACY_BATTERY_SERVICES := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -169,15 +170,15 @@ TW_INCLUDE_CRYPTO := false
 #TW_CRYPTO_KEY_LOC := "footer"
 
 # Additional binaries & libraries needed for recovery
-TARGET_RECOVERY_DEVICE_MODULES += \
-    ashmemd_aidl_interface-cpp \
-    libashmemd_client
+#TARGET_RECOVERY_DEVICE_MODULES += \
+#    ashmemd_aidl_interface-cpp \
+#    libashmemd_client
 #    libkeymaster4 \
 #    libpuresoftkeymasterdevice
 
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
+#TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+#    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
+#    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 #    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
 #    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
@@ -205,19 +206,19 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 # TWRP Configuration
 TW_DEFAULT_LANGUAGE := ru
 TW_EXTRA_LANGUAGES := false
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
-#TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
-#TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 TW_NO_SCREEN_BLANK := true
-#TW_SCREEN_BLANK_ON_BOOT := true
+TW_SCREEN_BLANK_ON_BOOT := true
 
 # Display
-#TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 150
 
 #TW_DEFAULT_DEVICE_NAME := spm8667p1_64
-TW_DEVICE_VERSION := Junsun V1Pro 8667 - lopestom
+TW_DEVICE_VERSION := 3-Junsun V1Pro 8667 - lopestom
 
 # Resolution
 #DEVICE_RESOLUTION := 720x1280
@@ -227,7 +228,8 @@ DEVICE_SCREEN_HEIGHT := 1280
 TW_IGNORE_MAJOR_AXIS_0 := true
 TW_ROTATION := 90
 #TW_ROTATION := 180
-RECOVERY_TOUCHSCREEN_SWAP_XY := true
+#RECOVERY_TOUCHSCREEN_SWAP_XY := true
+RECOVERY_TOUCHSCREEN_SWAP_XY := false
 RECOVERY_TOUCHSCREEN_FLIP_X := true
 #BOARD_HAS_FLIPPED_SCREEN := true
 
