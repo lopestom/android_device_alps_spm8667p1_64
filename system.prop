@@ -22,6 +22,10 @@ ro.hardware2=FF_866X
 ro.product.model2=FF_866X
 ro.product.name2=FF_866X
 # end of device/mediatek/system/common/system.prop
+ro.forfan.hardware.height=1280
+ro.forfan.hardware.width=720
+ro.forfan.touchheight=600
+ro.forfan.touchwidth=1085
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
