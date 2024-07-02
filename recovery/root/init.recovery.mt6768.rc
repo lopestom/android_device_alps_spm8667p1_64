@@ -42,6 +42,6 @@ on boot
 service touch_config /system/bin/touch_config
     class main
     user root
-	seclabel u:r:recovery:s0
+    seclabel u:r:recovery:s0
     oneshot
 
